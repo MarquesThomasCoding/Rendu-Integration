@@ -1,0 +1,10 @@
+.title {
+    font-size: $font-size-title;
+    font-weight: $font-weigth-semibold;
+    color: $color-primary-green;
+    line-height: $line-height-title;
+
+    &-white {
+        color: $color-primary-white;
+    }
+}

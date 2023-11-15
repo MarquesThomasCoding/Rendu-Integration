@@ -1,0 +1,16 @@
+// This file is used to style buttons throughout the project
+
+.button {
+  background-color: $color-primary-green;
+  border-radius: 10px;
+  padding: 1em 60px;
+  width: fit-content;
+  font-size: $font-size-button;
+  font-weight: $font-weigth-semibold;
+  color: $color-primary-white;
+
+  &-white {
+    background-color: $color-primary-white;
+    color: $color-primary-green;
+  }
+}

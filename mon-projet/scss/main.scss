@@ -1,0 +1,277 @@
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+
+// Base
+@import 'base/reset';
+@import 'base/typography';
+
+// Components
+@import 'components/titles';
+@import 'components/buttons';
+
+// Mixins
+@import 'mixins/mixins';
+
+// Pages
+@import 'pages/home';
+
+// Themes
+@import 'themes/theme';
+
+// Vendors
+@import 'vendors/bootstrap';
+
+
+.navbar {
+    position: fixed;
+    z-index: 2;
+    top:0;
+    left: 0;
+    right: 0;
+    @include flex(space-between, center);
+    margin-block: 25px;
+    padding-inline: 40px;
+
+    .navbar__menu {
+        @include flex(space-between, center);
+        gap: 50px;
+    }
+
+    .menu__item {
+        color: $color-primary-white;
+    }
+
+    .item__btn {
+        background-color: $color-primary-white;
+        color: $color-primary-green;
+        padding: 1em 30px;
+        border-radius: 10px;
+    }
+}
+
+section {
+    min-height: 100vh;
+
+    &.section-header {
+        background-image: url('/imgs/Headerback.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include flex(center, center, column);
+
+        .header-content {
+            z-index: 2;
+            font-family: $font-primary;
+            color: $color-primary-white;
+        }
+
+        .header-title {
+            font-size: $font-size-main-title;
+            font-weight: $font-weigth-medium;
+        }
+
+        .header-text {
+            font-size: $font-size-main-secondary-title;
+            font-style: italic;
+            margin-left: 70px;
+            transform: rotate(-9deg);
+        }
+
+        .header__social-media {
+            @include flex();
+            gap: 20px;
+            position: absolute;
+            margin: 80px;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &.section-welcome {
+        background-image: url('/imgs/61842.png');
+        display: flex;
+
+        .welcome__text {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 620px;
+            margin: 148px;
+        }
+
+        .welcome__p {
+            color: $color-primary-black;
+            font-size: $font-size-base;
+            font-weight: $font-weigth-regular;
+            margin-right: 148px;
+            line-height: $line-height-base;  
+        }
+
+        .welcome__img {
+            position: absolute;
+            right: 0px;
+        }
+    }
+
+    &.section-accroche {
+        background-image: url('/imgs/ismael-trevino-NDyuR4Huig8-unsplash.png');
+        @include flex();
+
+        .accroche__content {
+            @include flex(center, center, column);
+            gap: 40px;
+            background-color: rgba($color-primary-green, 0.8);
+            margin-inline: 580px 148px;
+            margin-block: 80px;
+            padding-block: 48px;
+            padding-inline: 68px;
+            text-align: center;
+        }
+
+        .accroche__p {
+            color: $color-primary-white;
+        }
+    }
+
+    &.section-menu {
+        background-image: url('/imgs/pattern.png');
+        @include flex(center, space-between, column);
+        margin-block: 65px;
+        gap: 80px;
+
+        .menu__text {
+            text-align: center;
+            @include flex(center, center, column);
+            gap: 30px;
+        }
+
+        .menu__p {
+            line-height: $line-height-base;
+        }
+
+        .content {
+            @include grid();
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+
+        .menu__list {
+            list-style: none;
+            @include flex(center, space-between, column);
+            margin-left: 148px;
+            gap: 38px;
+
+            .menu__item {
+                @include flex(center, space-between, column);
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .item__infos {
+                @include flex(space-between, center);
+            }
+
+            .item__name, .item__prix {
+                font-size: $font-size-list-title;
+                font-weight: $font-weigth-medium;
+                color: $color-primary-green;
+            
+            }
+        }
+
+        .menu__forces {
+            @include flex(center, center, column);
+            gap: 90px;
+            width: 430px;
+
+            .forces__titles {
+                font-size: $font-size-forces-title;
+                font-style: italic;
+                transform: rotate(-9deg);
+            }
+        }
+
+        .menu__item-sold {
+            position: relative;
+            border: 1px solid $color-primary-green;
+
+            .item-sold {
+                font-size: $font-size-small;
+                padding: 5px;
+                position: absolute;
+                top: -22px;
+                right: -1px;
+                background-color: $color-primary-green;
+                color: $color-primary-white;
+            }
+        }
+    }
+
+    &.section-preparations {
+        background-image: url('/imgs/louis-hansel-MlPD-AzZYMg-unsplash.png');
+        background-size: cover;
+        @include grid(center, stretch);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+
+        .preparations {
+            @include flex(flex-start, center, column);
+            padding: 24px 128px;
+            margin-block: 150px;
+            color: $color-primary-white;
+
+            &__green {
+                background-color: rgba($color-primary-green, 0.8);
+                margin-left: 40px;
+            }
+
+            &__blue {
+                background-color: rgba($color-primary-blue, 0.8);
+                margin-right: 40px;
+            }
+        }
+
+        .preparations__list {
+            width: 100%;
+            @include grid();
+            grid-template-columns: repeat(2, 1fr);
+            text-align: center;
+            line-height: $line-height-base;
+            margin-top: 40px;
+        }
+    }
+}
+
+.blue {
+    color: $color-primary-blue;
+}
+
+.green {
+    color: $color-primary-green;
+
+}
+
+.overlay {
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(to right, #60A0D8, #B2D234);
+    opacity: 0.5;
+}
+
+.footer {
+    @include grid(center, space-between);
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    background-color: $color-primary-green;
+    color: $color-primary-white;
+    padding: 67px;
+
+    .footer__list {
+
+    }
+
+}
