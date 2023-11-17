@@ -13,28 +13,28 @@
     <nav class="navbar">
         <img class="navbar__img" src="imgs/Logo.png" alt="Logo">
         <ul class="navbar__menu">
-            <li class="menu__item"><a href="#">Accueil</a></li>
-            <li class="menu__item"><a href="#">Qui sommes-nous ?</a></li>
-            <li class="menu__item"><a href="#">Menu</a></li>
-            <li class="menu__item"><a href="#">Contact</a></li>
+            <li class="menu__item"><a href="#header">Accueil</a></li>
+            <li class="menu__item"><a href="#welcome">Qui sommes-nous ?</a></li>
+            <li class="menu__item"><a href="#menu">Menu</a></li>
+            <li class="menu__item"><a href="#form">Contact</a></li>
             <li class="menu__item item__btn"><a href="#">Commander</a></li>
         </ul>
     </nav>
 
-    <section class="section-header">
+    <section id="header" class="section-header">
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="header-title">mongoo</h1>
             <p class="header-text">c'est frais pour vous !</p>
         </div>
         <div class="header__social-media">
-            <img src="/imgs/Icon awesome-facebook-square.png" alt="Facebook" class="social-media__item">
-            <img src="/imgs/Icon awesome-instagram.png" alt="Instagram" class="social-media__item">
-            <img src="/imgs/Icon awesome-twitter-square.png" alt="Twitter" class="social-media__item">
+            <img src="imgs/Icon awesome-facebook-square.png" alt="Facebook" class="social-media__item">
+            <img src="imgs/Icon awesome-instagram.png" alt="Instagram" class="social-media__item">
+            <img src="imgs/Icon awesome-twitter-square.png" alt="Twitter" class="social-media__item">
         </div>
     </section>
 
-    <section class="section-welcome">
+    <section id="welcome" class="section-welcome">
         <div class="welcome__text">
             <h2 class="title welcome__title">Une salade sur mesure</h2>
             <p class="welcome__p">
@@ -49,7 +49,7 @@
         <img class="welcome__img" src="imgs/salade-detoure.png" alt="Salade">
     </section>
 
-    <section class="section-accroche">
+    <section id="accroche" class="section-accroche">
         <div class="accroche__content">
             <h2 class="title title-white accroche__title">Préparé sur place et avec amour</h2>
             <p class="accroche__p">
@@ -63,7 +63,7 @@
         </div>
     </section>
 
-    <section class="section-menu">
+    <section id="menu" class="section-menu">
         <div class="menu__text">
             <h2 class="title menu__title">Vous avez dit menu ?</h2>
             <p class="menu__p">
@@ -147,7 +147,7 @@
         </div>
     </section>
 
-    <section class="section-preparations">
+    <section id="preparations" class="section-preparations">
         <div class="preparations preparations__green">
             <h2 class="title title-white preparations__title">Chez les verts</h2>
             <ul class="preparations__list">
@@ -191,12 +191,46 @@
         </div>
     </section>
 
+    <section id="form" class="section-form">
+        <div class="form__cut-img">
+            <!-- <img src="/imgs/anh-nguyen-_Uqj5BQb-mw-unsplash.png" alt="Salade" class="form__img"> -->
+            <div class="form__cut-img__line"></div>
+            <div class="form__cut-img__line"></div>
+        </div>
+        <div class="form__section">
+            <h2 class="title form__title">Envie de partager ?</h2>
+            <p class="form__p">
+                Toute l'année, on recrute des employés motivés pour tous nos restaurants ! 
+                N'hésitez pas à postuler !
+            </p>
+            <form class="form__form">
+                <div class="form__case">
+                    <label class="form__label" for="lastname">Nom</label>
+                    <input id="lastname" class="form__input" type="text">
+                </div>
+                <div class="form__case">
+                    <label class="form__label" for="firstname">Prénom</label>
+                    <input id="firstname" class="form__input" type="text">
+                </div>
+                <div class="form__case">
+                    <label class="form__label" for="email">Email</label>
+                    <input id="email" class="form__input" type="email">
+                </div>
+                <div class="form__case">
+                    <label class="form__label" for="motivation">Votre motivation en quelques mots</label>
+                    <textarea id="motivation" class="form__textarea"></textarea>
+                </div>
+            </form>
+            <a href="" class="button">Postuler</a>
+        </div>
+    </section>
+
     <footer class="footer">
-        <img src="/imgs/mangoo.png" alt="Logo" class="footer__img">
+        <img src="imgs/mangoo.png" alt="Logo" class="footer__img">
         <ul class="footer__list">
             <li class="footer__title">Commander</li>
             <li class="footer__item"><a href="">Passer commande</a></li>
-            <li class="footer__item"><a href="">>Nos menus</a></li>
+            <li class="footer__item"><a href="">Nos menus</a></li>
             <li class="footer__item"><a href="">Restaurants</a></li>
         </ul>
         <ul class="footer__list">

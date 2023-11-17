@@ -24,7 +24,7 @@
 
 
 .navbar {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     top:0;
     left: 0;
@@ -47,6 +47,7 @@
         color: $color-primary-green;
         padding: 1em 30px;
         border-radius: 10px;
+        box-shadow: 0px 8px 16px rgba($color-primary-black, 0.25);
     }
 }
 
@@ -54,7 +55,7 @@ section {
     min-height: 100vh;
 
     &.section-header {
-        background-image: url('/imgs/Headerback.png');
+        background-image: url('../imgs/Headerback.png');
         background-size: cover;
         background-repeat: no-repeat;
         @include flex(center, center, column);
@@ -68,6 +69,7 @@ section {
         .header-title {
             font-size: $font-size-main-title;
             font-weight: $font-weigth-medium;
+            line-height: 189px;
         }
 
         .header-text {
@@ -88,7 +90,7 @@ section {
     }
 
     &.section-welcome {
-        background-image: url('/imgs/61842.png');
+        background-image: url('../imgs/61842.png');
         display: flex;
 
         .welcome__text {
@@ -114,7 +116,8 @@ section {
     }
 
     &.section-accroche {
-        background-image: url('/imgs/ismael-trevino-NDyuR4Huig8-unsplash.png');
+        background-image: url('../imgs/ismael-trevino-NDyuR4Huig8-unsplash.png');
+        background-size: cover;
         @include flex();
 
         .accroche__content {
@@ -134,7 +137,7 @@ section {
     }
 
     &.section-menu {
-        background-image: url('/imgs/pattern.png');
+        background-image: url('../imgs/pattern.png');
         @include flex(center, space-between, column);
         margin-block: 65px;
         gap: 80px;
@@ -208,7 +211,7 @@ section {
     }
 
     &.section-preparations {
-        background-image: url('/imgs/louis-hansel-MlPD-AzZYMg-unsplash.png');
+        background-image: url('../imgs/louis-hansel-MlPD-AzZYMg-unsplash.png');
         background-size: cover;
         @include grid(center, stretch);
         grid-template-columns: repeat(2, 1fr);
@@ -240,6 +243,82 @@ section {
             margin-top: 40px;
         }
     }
+
+    &.section-form {
+        background-image: url('../imgs/61842.png');
+        @include grid(center, center);
+        grid-template-columns: repeat(2, 1fr);
+        color: $color-primary-black;
+
+        .form__cut-img {
+            background-size: cover;
+            aspect-ratio: 1/1;
+            position: relative;
+            margin-left: 40px;
+            margin-right: 64px;
+            background-image: url('../imgs/anh-nguyen-_Uqj5BQb-mw-unsplash.png');
+        }
+
+        .form__cut-img__line {
+            background-color: $color-primary-white;
+            position: absolute;
+            top:0;
+            left: calc(50% - 8px);
+            width: 8px;
+            height: 100%;
+
+            &:nth-child(2) {
+                top: calc(50% - 8px);
+                left: 0;
+                width: 100%;
+                height: 8px;
+            }
+        }
+
+        .form__section {
+            @include flex(space-between, center, column);
+            margin-block: 84px;
+            margin-right: 106px;
+            gap: 20px;
+        }
+
+        .form__form {
+            @include flex(space-between, flex-start);
+            gap: 25px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .form__case {
+            @include flex(center, flex-start, column);
+            gap: 8px;
+            width: 48%;
+
+            &:nth-child(n+3) {
+                width: 100%;
+            }
+        }
+
+        .form__label {
+            font-size: $font-size-list-title;
+            font-style: italic;
+            color: $color-primary-green;
+        }
+
+        .form__input {
+            height: 40px;
+            border: 1px solid rgba($color-primary-black, 0.2);
+            padding: 0 10px;
+            width: 100%;
+        
+        }
+
+        .form__textarea {
+            @extend .form__input;
+            height: 100px;
+            resize: none;
+        }
+    }
 }
 
 .blue {
@@ -248,7 +327,6 @@ section {
 
 .green {
     color: $color-primary-green;
-
 }
 
 .overlay {
@@ -263,15 +341,23 @@ section {
 }
 
 .footer {
-    @include grid(center, space-between);
-    gap: 40px;
+    @include grid(space-between, center);
+    // gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     background-color: $color-primary-green;
     color: $color-primary-white;
     padding: 67px;
 
     .footer__list {
+        @include flex(center, center, column);
+        gap: 10px;
+        line-height: 34px;
+    }
 
+    .footer__title {
+        font-size: $font-size-footer-title;
+        font-weight: $font-weigth-semibold;
+        margin-bottom: 20px;
     }
 
 }
