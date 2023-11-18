@@ -10,3 +10,9 @@
     justify-content: $justify-content;
     align-items: $align-items;
 }
+
+@mixin bp($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}

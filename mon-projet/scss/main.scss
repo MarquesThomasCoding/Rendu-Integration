@@ -1,6 +1,5 @@
 // Abstracts
 @import 'abstracts/variables';
-@import 'abstracts/functions';
 
 // Base
 @import 'base/reset';
@@ -13,15 +12,10 @@
 // Mixins
 @import 'mixins/mixins';
 
-// Pages
-@import 'pages/home';
 
-// Themes
-@import 'themes/theme';
-
-// Vendors
-@import 'vendors/bootstrap';
-
+body {
+    overflow-x: hidden;
+}
 
 .navbar {
     position: absolute;
@@ -30,8 +24,18 @@
     left: 0;
     right: 0;
     @include flex(space-between, center);
-    margin-block: 25px;
+    flex-wrap: wrap;
+    padding-block: 25px;
     padding-inline: 40px;
+
+    @include bp(1020px) {
+        background-color: $color-primary-green;
+        background-size: cover;
+    }
+
+    @include bp(450px) {
+        justify-content: center;
+    }
 
     .navbar__menu {
         @include flex(space-between, center);
@@ -39,42 +43,43 @@
     }
 
     .menu__item {
-        color: $color-primary-white;
+        @include bp(1020px) {
+            display: none;
+        }
     }
 
     .item__btn {
+        display: block;
         background-color: $color-primary-white;
-        color: $color-primary-green;
         padding: 1em 30px;
         border-radius: 10px;
         box-shadow: 0px 8px 16px rgba($color-primary-black, 0.25);
+
+        @include bp(450px) {
+            display: none;
+        }
     }
 }
 
-section {
+.section {
     min-height: 100vh;
+    max-width: 100%;
 
-    &.section-header {
+    &.header {
         background-image: url('../imgs/Headerback.png');
         background-size: cover;
         background-repeat: no-repeat;
         @include flex(center, center, column);
 
-        .header-content {
-            z-index: 2;
-            font-family: $font-primary;
-            color: $color-primary-white;
+        @include bp(1020px) {
+            display: none;
         }
 
-        .header-title {
-            font-size: $font-size-main-title;
-            font-weight: $font-weigth-medium;
-            line-height: 189px;
+        .header-content {
+            z-index: 2;
         }
 
         .header-text {
-            font-size: $font-size-main-secondary-title;
-            font-style: italic;
             margin-left: 70px;
             transform: rotate(-9deg);
         }
@@ -89,36 +94,46 @@ section {
         }
     }
 
-    &.section-welcome {
+    &.welcome {
         background-image: url('../imgs/61842.png');
-        display: flex;
+        @include flex(center, stretch, column);
+        position: relative;
 
         .welcome__text {
-            display: flex;
-            flex-direction: column;
+            @include flex(center, stretch, column);
             gap: 40px;
             width: 620px;
             margin: 148px;
+
+            @include bp(904px) {
+                margin-inline: 20px;
+                width: 90%;
+            }
         }
 
         .welcome__p {
-            color: $color-primary-black;
-            font-size: $font-size-base;
-            font-weight: $font-weigth-regular;
             margin-right: 148px;
-            line-height: $line-height-base;  
+
+            @include bp(904px) {
+                margin-inline: 0;
+            }
         }
 
         .welcome__img {
             position: absolute;
-            right: 0px;
+            right: -155px;
+
+            @include bp(1265px) {
+                display: none;
+            }
         }
     }
 
-    &.section-accroche {
+    &.accroche {
         background-image: url('../imgs/ismael-trevino-NDyuR4Huig8-unsplash.png');
         background-size: cover;
         @include flex();
+        position: relative;
 
         .accroche__content {
             @include flex(center, center, column);
@@ -126,17 +141,20 @@ section {
             background-color: rgba($color-primary-green, 0.8);
             margin-inline: 580px 148px;
             margin-block: 80px;
-            padding-block: 48px;
-            padding-inline: 68px;
+            padding: 48px 68px;
             text-align: center;
-        }
 
-        .accroche__p {
-            color: $color-primary-white;
+            @include bp(1180px) {
+                margin-inline: auto;
+            }
+
+            @include bp(904px) {
+                padding-inline: 20px;
+            }
         }
     }
 
-    &.section-menu {
+    &.menu {
         background-image: url('../imgs/pattern.png');
         @include flex(center, space-between, column);
         margin-block: 65px;
@@ -148,21 +166,25 @@ section {
             gap: 30px;
         }
 
-        .menu__p {
-            line-height: $line-height-base;
-        }
-
         .content {
             @include grid();
             grid-template-columns: repeat(2, 1fr);
             gap: 60px;
+
+            @include bp(1020px) {
+                grid-template-columns: 1fr;
+            }
         }
 
         .menu__list {
             list-style: none;
-            @include flex(center, space-between, column);
+            @include flex(center, stretch, column);
             margin-left: 148px;
             gap: 38px;
+
+            @include bp(1020px) {
+                margin: auto;
+            }
 
             .menu__item {
                 @include flex(center, space-between, column);
@@ -173,23 +195,18 @@ section {
             .item__infos {
                 @include flex(space-between, center);
             }
-
-            .item__name, .item__prix {
-                font-size: $font-size-list-title;
-                font-weight: $font-weigth-medium;
-                color: $color-primary-green;
-            
-            }
         }
 
         .menu__forces {
             @include flex(center, center, column);
             gap: 90px;
-            width: 430px;
+            margin-right: 198px;
+
+            @include bp(1310px) {
+                margin: 20px;
+            }
 
             .forces__titles {
-                font-size: $font-size-forces-title;
-                font-style: italic;
                 transform: rotate(-9deg);
             }
         }
@@ -205,32 +222,42 @@ section {
                 top: -22px;
                 right: -1px;
                 background-color: $color-primary-green;
-                color: $color-primary-white;
             }
         }
     }
 
-    &.section-preparations {
+    &.preparations {
         background-image: url('../imgs/louis-hansel-MlPD-AzZYMg-unsplash.png');
         background-size: cover;
         @include grid(center, stretch);
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
 
-        .preparations {
+        @include bp(900px) {
+            grid-template-columns: 1fr;
+            margin: auto;
+        }
+
+        .preparations__card {
             @include flex(flex-start, center, column);
-            padding: 24px 128px;
+            padding-block: 24px;
             margin-block: 150px;
-            color: $color-primary-white;
 
-            &__green {
-                background-color: rgba($color-primary-green, 0.8);
-                margin-left: 40px;
-            }
+            $colors: (green $color-primary-green, blue $color-primary-blue);
 
-            &__blue {
-                background-color: rgba($color-primary-blue, 0.8);
-                margin-right: 40px;
+            @each $color, $value in $colors {
+                &__#{$color} {
+                    background-color: rgba($value, 0.8);
+                    @if($color == 'green') {
+                        margin-left: 40px;
+                    } @else {
+                        margin-right: 40px;
+                    }
+
+                    @include bp(900px) {
+                        margin: 0px;
+                    }
+                }
             }
         }
 
@@ -239,24 +266,29 @@ section {
             @include grid();
             grid-template-columns: repeat(2, 1fr);
             text-align: center;
-            line-height: $line-height-base;
             margin-top: 40px;
         }
     }
 
-    &.section-form {
+    &.form {
         background-image: url('../imgs/61842.png');
         @include grid(center, center);
         grid-template-columns: repeat(2, 1fr);
-        color: $color-primary-black;
+
+        @include bp(1226px) {
+            grid-template-columns: 1fr;
+        }
 
         .form__cut-img {
             background-size: cover;
             aspect-ratio: 1/1;
             position: relative;
-            margin-left: 40px;
-            margin-right: 64px;
+            margin-inline: 40px 64px;
             background-image: url('../imgs/anh-nguyen-_Uqj5BQb-mw-unsplash.png');
+
+            @include bp(1226px) {
+                display: none;
+            }
         }
 
         .form__cut-img__line {
@@ -277,9 +309,13 @@ section {
 
         .form__section {
             @include flex(space-between, center, column);
-            margin-block: 84px;
+            margin-block: 84px 106px;
             margin-right: 106px;
             gap: 20px;
+
+            @include bp(1226px) {
+                margin: 20px;
+            }
         }
 
         .form__form {
@@ -299,12 +335,6 @@ section {
             }
         }
 
-        .form__label {
-            font-size: $font-size-list-title;
-            font-style: italic;
-            color: $color-primary-green;
-        }
-
         .form__input {
             height: 40px;
             border: 1px solid rgba($color-primary-black, 0.2);
@@ -321,14 +351,6 @@ section {
     }
 }
 
-.blue {
-    color: $color-primary-blue;
-}
-
-.green {
-    color: $color-primary-green;
-}
-
 .overlay {
     position:absolute;
     top: 0;
@@ -341,22 +363,22 @@ section {
 }
 
 .footer {
-    @include grid(space-between, center);
-    // gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @include grid(center, center);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     background-color: $color-primary-green;
-    color: $color-primary-white;
     padding: 67px;
+    gap: 40px;
 
-    .footer__list {
-        @include flex(center, center, column);
-        gap: 10px;
-        line-height: 34px;
+    img {
+        width: 100%;
     }
 
-    .footer__title {
-        font-size: $font-size-footer-title;
-        font-weight: $font-weigth-semibold;
+    &__list {
+        @include flex(center, center, column);
+        gap: 10px;
+    }
+
+    &__title {
         margin-bottom: 20px;
     }
 

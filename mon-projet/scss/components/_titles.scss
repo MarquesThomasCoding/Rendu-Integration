@@ -1,3 +1,5 @@
+@use '../mixins/_mixins.scss' as *;
+
 .title {
     font-size: $font-size-title;
     font-weight: $font-weigth-semibold;
@@ -6,5 +8,9 @@
 
     &-white {
         color: $color-primary-white;
+    }
+
+    @include bp(580px) {
+        font-size: $font-size-title*0.8;
     }
 }

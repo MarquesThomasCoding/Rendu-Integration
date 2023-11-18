@@ -1,5 +1,7 @@
 // Font
 
+@use '../mixins/mixins' as *;
+
 $font-primary: 'Poppins', sans-serif;
 
 $font-weigth-light: 300;
@@ -30,7 +32,105 @@ body {
     font-weight: $font-weigth-light;
 }
 
+.menu__item {
+    color: $color-primary-white;
+}
+
 .item__btn {
     font-weight: $font-weigth-semibold;
     font-size: 15px;
+    color: $color-primary-green;
+}
+
+.header-content {
+    font-family: $font-primary;
+    color: $color-primary-white;
+}
+
+.header-title {
+    font-size: $font-size-main-title;
+    font-weight: $font-weigth-medium;
+    line-height: 189px;
+}
+
+.header-text {
+    font-size: $font-size-main-secondary-title;
+    font-style: italic;
+    
+    @include bp(650px) {
+        font-size: $font-size-main-secondary-title*0.4;
+    }
+}
+
+.welcome__p {
+    font-size: $font-size-base;
+    font-weight: $font-weigth-regular;
+    line-height: $line-height-base;
+    color: $color-primary-black;
+}
+
+.accroche__p {
+    color: $color-primary-white;
+}
+
+.menu__p {
+    line-height: $line-height-base;
+}
+
+.item__name, .item__prix {
+    font-size: $font-size-list-title;
+    font-weight: $font-weigth-medium;
+    color: $color-primary-green;
+}
+
+.force__titles {
+    font-size: $font-size-forces-title;
+    font-style: italic;
+
+    @include bp(467px) {
+        font-size: $font-size-forces-title*0.7;
+    }
+}
+
+.item-sold {
+    color: $color-primary-white;
+}
+
+.preparations {
+    color: $color-primary-white;
+}
+
+.preparations__list {
+    line-height: $line-height-base;
+}
+
+.section-form {
+    color: $color-primary-black;
+}
+
+.form__label {
+    font-size: $font-size-list-title;
+    font-style: italic;
+    color: $color-primary-green;
+}
+
+.blue {
+    color: $color-primary-blue;
+}
+
+.green {
+    color: $color-primary-green;
+}
+
+.footer {
+    color: $color-primary-white;
+
+    &__list {
+        line-height: 34px;
+    }
+
+    &__title {
+        font-size: $font-size-footer-title;
+        font-weight: $font-weigth-semibold;
+    }
 }
