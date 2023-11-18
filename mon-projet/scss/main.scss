@@ -25,8 +25,7 @@ body {
     right: 0;
     @include flex(space-between, center);
     flex-wrap: wrap;
-    padding-block: 25px;
-    padding-inline: 40px;
+    padding: 40px 25px;
 
     @include bp(1020px) {
         background-color: $color-primary-green;
@@ -99,32 +98,34 @@ body {
         @include flex(center, stretch, column);
         position: relative;
 
-        .welcome__text {
-            @include flex(center, stretch, column);
-            gap: 40px;
-            width: 620px;
-            margin: 148px;
+        .welcome {
+            &__text {
+                @include flex(center, stretch, column);
+                gap: 40px;
+                width: 620px;
+                margin: 148px;
 
-            @include bp(904px) {
-                margin-inline: 20px;
-                width: 90%;
+                @include bp(904px) {
+                    margin-inline: 20px;
+                    width: 90%;
+                }
             }
-        }
 
-        .welcome__p {
-            margin-right: 148px;
+            &__p {
+                margin-right: 148px;
 
-            @include bp(904px) {
-                margin-inline: 0;
+                @include bp(904px) {
+                    margin-inline: 0;
+                }
             }
-        }
 
-        .welcome__img {
-            position: absolute;
-            right: -155px;
+            &__img {
+                position: absolute;
+                right: -155px;
 
-            @include bp(1265px) {
-                display: none;
+                @include bp(1265px) {
+                    display: none;
+                }
             }
         }
     }
@@ -381,5 +382,4 @@ body {
     &__title {
         margin-bottom: 20px;
     }
-
 }

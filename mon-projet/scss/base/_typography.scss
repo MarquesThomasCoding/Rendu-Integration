@@ -42,23 +42,25 @@ body {
     color: $color-primary-green;
 }
 
-.header-content {
+.header {
+    &-content {
     font-family: $font-primary;
     color: $color-primary-white;
-}
+    }
 
-.header-title {
-    font-size: $font-size-main-title;
-    font-weight: $font-weigth-medium;
-    line-height: 189px;
-}
+    &-title {
+        font-size: $font-size-main-title;
+        font-weight: $font-weigth-medium;
+        line-height: 189px;
+    }
 
-.header-text {
-    font-size: $font-size-main-secondary-title;
-    font-style: italic;
-    
-    @include bp(650px) {
-        font-size: $font-size-main-secondary-title*0.4;
+    &-text {
+        font-size: $font-size-main-secondary-title;
+        font-style: italic;
+        
+        @include bp(650px) {
+            font-size: $font-size-main-secondary-title*0.4;
+        }
     }
 }
 
@@ -98,11 +100,13 @@ body {
 
 .preparations {
     color: $color-primary-white;
+
+    &__list {
+        line-height: $line-height-base;
+    }
 }
 
-.preparations__list {
-    line-height: $line-height-base;
-}
+
 
 .section-form {
     color: $color-primary-black;

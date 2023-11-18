@@ -100,13 +100,11 @@ body {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
-
 .header-title {
   font-size: 126px;
   font-weight: 500;
   line-height: 189px;
 }
-
 .header-text {
   font-size: 54px;
   font-style: italic;
@@ -155,7 +153,6 @@ body {
 .preparations {
   color: #ffffff;
 }
-
 .preparations__list {
   line-height: 24px;
 }
@@ -234,8 +231,7 @@ body {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-block: 25px;
-  padding-inline: 40px;
+  padding: 40px 25px;
 }
 @media (max-width: 1020px) {
   .navbar {
