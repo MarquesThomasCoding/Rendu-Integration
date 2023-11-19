@@ -10,23 +10,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
+        <!-- Logo -->
         <img class="navbar__img" src="imgs/Logo.png" alt="Logo">
+        <!-- Menu de navigation -->
         <ul class="navbar__list">
-            <li class="navbar__list__item"><a href="#header">Accueil</a></li>
-            <li class="navbar__list__item"><a href="#welcome">Qui sommes-nous ?</a></li>
-            <li class="navbar__list__item"><a href="#menu">Menu</a></li>
-            <li class="navbar__list__item"><a href="#form">Contact</a></li>
-            <li class="navbar__list__item navbar__list__item__btn"><a href="#">Commander</a></li>
+            <li class="navbar__list__item"><a href="#header">Accueil</a><div class="navbar__list__item__border"></div></li>
+            <li class="navbar__list__item"><a href="#welcome">Qui sommes-nous ?</a><div class="navbar__list__item__border"></div></li>
+            <li class="navbar__list__item"><a href="#menu">Menu</a><div class="navbar__list__item__border"></div></li>
+            <li class="navbar__list__item"><a href="#form">Contact</a><div class="navbar__list__item__border"></div></li>
+            <li class="navbar__list__item navbar__list__item__btn"><a href="#">Commander</a><div class="navbar__list__item__border"></div></li>
         </ul>
     </nav>
 
+    <!-- Header -->
     <section id="header" class="section header">
+        <!-- Overlay qui recouvre le header et donne l'effet coloré à l'image -->
         <div class="overlay"></div>
+        <!-- Contenu de l'header -->
         <div class="header__content">
             <h1 class="header__title">mongoo</h1>
             <p class="header__text">c'est frais pour vous !</p>
         </div>
+        <!-- Réseaux sociaux -->
         <div class="header__social-media">
             <img src="imgs/Icon awesome-facebook-square.png" alt="Facebook" class="social-media__item">
             <img src="imgs/Icon awesome-instagram.png" alt="Instagram" class="social-media__item">
@@ -34,6 +41,7 @@
         </div>
     </section>
 
+    <!-- Section "welcome" -->
     <section id="welcome" class="section welcome">
         <div class="welcome__text">
             <h2 class="title welcome__title">Une salade sur mesure</h2>
@@ -49,6 +57,7 @@
         <img class="welcome__img" src="imgs/salade-detoure.png" alt="Salade">
     </section>
 
+    <!-- Section d'accroche -->
     <section id="accroche" class="section accroche">
         <div class="accroche__content">
             <h2 class="title title--white accroche__title">Préparé sur place et avec amour</h2>
@@ -63,6 +72,7 @@
         </div>
     </section>
 
+    <!-- Section du menu du restaurant -->
     <section id="menu" class="section menu">
         <div class="menu__text">
             <h2 class="title menu__title">Vous avez dit menu ?</h2>
@@ -74,6 +84,7 @@
                 Découvrez notre large sélection de boissons et desserts pour accompagner votre repas
             </p>
         </div>
+        <!-- Liste des salades -->
         <div class="menu__content">
             <ul class="menu__list">
                 <li class="menu__item">
@@ -98,6 +109,7 @@
                         Petit plus et pain offert 
                     </div>
                 </li>
+                <!-- Salade la plus vendue -->
                 <li class="menu__item menu__item-sold">
                     <div class="menu__item-sold__text">La plus vendue !</div>
                     <div class="menu__item__infos">
@@ -133,6 +145,7 @@
                     </div>
                 </li>
             </ul>
+            <!-- Section de droite, avec les forces vertes et bleues -->
             <div class="menu__forces">
                 <div class="menu__forces__titles">
                     <h1 class="menu__forces__title green">Force verte ?</h1>
@@ -147,9 +160,11 @@
         </div>
     </section>
 
+    <!-- Section préparations -->
     <section id="preparations" class="section preparations">
         <div class="preparations__card preparations__card__green">
             <h2 class="title title--white preparations__title">Chez les verts</h2>
+            <!-- Liste des ingrédients -->
             <ul class="preparations__list">
                 <li class="preparations__list__item">Croûtons</li>
                 <li class="preparations__list__item">Radis</li>
@@ -172,6 +187,7 @@
         </div>
         <div class="preparations__card preparations__card__blue">
             <h2 class="title title--white preparations__title">Chez les bleus</h2>
+            <!-- Liste des ingrédients -->
             <ul class="preparations__list">
                 <li class="preparations__list__item">Aubergines</li>
                 <li class="preparations__list__item">Feta</li>
@@ -191,9 +207,9 @@
         </div>
     </section>
 
+    <!-- Section du formulaire -->
     <section id="form" class="section form">
         <div class="form__cut-img">
-            <!-- <img src="/imgs/anh-nguyen-_Uqj5BQb-mw-unsplash.png" alt="Salade" class="form__img"> -->
             <div class="form__cut-img__line"></div>
             <div class="form__cut-img__line"></div>
         </div>
@@ -225,7 +241,9 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
+        <!-- Logo -->
         <img src="imgs/mangoo.png" alt="Logo" class="footer__img">
         <ul class="footer__list">
             <li class="footer__title">Commander</li>

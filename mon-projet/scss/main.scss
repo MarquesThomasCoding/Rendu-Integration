@@ -37,6 +37,7 @@ body {
     background-repeat: no-repeat;
     @include flex(center, center, column);
 
+    // En responsive (- de 1020px), on cache la section header
     @include bp(1020px) {
         display: none;
     }
@@ -89,6 +90,7 @@ body {
         width: 620px;
         margin: 148px;
 
+        // En responsive (- de 904px), on réduit les marges horizontales à 20px et la largeur à 90%
         @include bp(904px) {
             margin-inline: 20px;
             width: 90%;
@@ -99,6 +101,7 @@ body {
     &__p {
         margin-right: 148px;
 
+        // En responsive (- de 904px), on enlève les marges horizontales pour occuper plus d'espace
         @include bp(904px) {
             margin-inline: 0;
         }
@@ -110,6 +113,7 @@ body {
         top: 0;
         right: -155px;
 
+        // En responsive (- de 1265px), on cache l'image
         @include bp(1265px) {
             display: none;
         }
@@ -134,10 +138,12 @@ body {
         padding: 48px 68px;
         text-align: center;
 
+        // En responsive (- de 1180px), on met les marges horizontales à auto
         @include bp(1180px) {
             margin-inline: auto;
         }
 
+        // En responsive (- de 904px), on réduit les marges internes horizontales à 20px pour occuper plus d'espace
         @include bp(904px) {
             padding-inline: 20px;
         }
@@ -165,6 +171,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 60px;
 
+        // En responsive (- de 1020px), on passe en une colonne
         @include bp(1020px) {
             grid-template-columns: 1fr;
         }
@@ -177,6 +184,7 @@ body {
         margin-left: 148px;
         gap: 38px;
 
+        // En responsive (- de 1020px), on met les marges à auto
         @include bp(1020px) {
             margin: auto;
         }
@@ -200,6 +208,7 @@ body {
         gap: 90px;
         margin-right: 198px;
 
+        // En responsive (- de 1310px), on met les marges à 20px pour occuper plus d'espace
         @include bp(1310px) {
             margin: 20px;
         }
@@ -214,6 +223,7 @@ body {
             width: 460px;
             text-align: center;
 
+            // En responsive (- de 1020px), on met la largeur à 100%
             @include bp(1020px) {
                 width: 100%;
             }
@@ -246,6 +256,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 
+    // En responsive (- de 900px), on passe en une colonne
     @include bp(900px) {
         grid-template-columns: 1fr;
         margin: auto;
@@ -269,6 +280,7 @@ body {
                     margin-right: 40px;
                 }
 
+                // En responsive (- de 900px), on enlève les marges pour occuper plus d'espace
                 @include bp(900px) {
                     margin: 0px;
                 }
@@ -293,6 +305,7 @@ body {
     @include grid(center, center);
     grid-template-columns: repeat(2, 1fr);
 
+    // En responsive (- de 1226px), on passe en une colonne
     @include bp(1226px) {
         grid-template-columns: 1fr;
     }
@@ -305,6 +318,7 @@ body {
         margin-inline: 40px 64px;
         background-image: url('../imgs/anh-nguyen-_Uqj5BQb-mw-unsplash.png');
 
+        // En responsive (- de 1226px), on cache l'image
         @include bp(1226px) {
             display: none;
         }
@@ -335,6 +349,7 @@ body {
         margin-right: 106px;
         gap: 20px;
 
+        // En responsive (- de 1226px), on met les marges à 20px pour occuper plus d'espace
         @include bp(1226px) {
             margin: 20px;
         }

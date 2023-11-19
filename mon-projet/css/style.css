@@ -249,7 +249,6 @@ body {
 @media (max-width: 1020px) {
   .navbar {
     background-color: #B2D234;
-    background-size: cover;
   }
 }
 @media (max-width: 450px) {
@@ -264,10 +263,26 @@ body {
   flex-direction: row;
   gap: 50px;
 }
+.navbar__list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
 @media (max-width: 1020px) {
   .navbar__list__item {
     display: none;
   }
+}
+.navbar__list__item__border {
+  visibility: hidden;
+  width: 60%;
+  height: 2px;
+  background-color: #ffffff;
+}
+.navbar__list__item:hover .navbar__list__item__border {
+  visibility: visible;
 }
 .navbar__list__item__btn {
   display: block;

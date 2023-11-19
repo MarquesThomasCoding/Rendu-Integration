@@ -51,6 +51,7 @@ body {
         font-size: $font-size-main-secondary-title;
         font-style: italic;
         
+        // En responsive (- de 650px), on réduit la taille de la typo de 60%
         @include bp(650px) {
             font-size: $font-size-main-secondary-title*0.4;
         }
@@ -91,6 +92,7 @@ body {
         font-size: $font-size-forces-title;
         font-style: italic;
     
+        // En responsive (- de 467px), on réduit la taille de la typo de 30%
         @include bp(467px) {
             font-size: $font-size-forces-title*0.7;
         }

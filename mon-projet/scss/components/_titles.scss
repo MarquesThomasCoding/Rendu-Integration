@@ -12,6 +12,7 @@
         color: $color-primary-white;
     }
 
+    // En responsive (- de 580px), on réduit la taille de la typo de 20%
     @include bp(580px) {
         font-size: $font-size-title*0.8;
     }

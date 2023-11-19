@@ -11,11 +11,12 @@
     flex-wrap: wrap;
     padding: 40px 25px;
 
+    // En responsive (- de 1020px), la navbar devient verte
     @include bp(1020px) {
         background-color: $color-primary-green;
-        background-size: cover;
     }
 
+    // En responsive (- de 450px), on centre les éléments (à savoir le logo)
     @include bp(450px) {
         justify-content: center;
     }
@@ -27,9 +28,30 @@
 
         // .navbar__list__item
         &__item {
+            @include flex(center, center, column);
+            gap: 10px;
+            // En responsive (- de 1020px), on cache les éléments du menu
             @include bp(1020px) {
                 display: none;
             }
+
+            // .navbar__list__item__border
+            &__border {
+                visibility: hidden;
+                width: 60%;
+                height: 2px;
+                background-color: $color-primary-white;
+            }
+
+            // Lorsqu'on survol un élément de la navbar, on affiche la bordure
+            // .navbar__list__item:hover
+            &:hover {
+                // .navbar__list__item:hover .navbar__list__item__border
+                & .navbar__list__item__border {
+                    visibility: visible;
+                }
+            }
+
                 // .navbar__list__item__btn
             &__btn {
                 display: block;
@@ -38,6 +60,7 @@
                 border-radius: 10px;
                 box-shadow: 0px 8px 16px rgba($color-primary-black, 0.25);
             
+                // En responsive (- de 450px), on cache le bouton
                 @include bp(450px) {
                     display: none;
                 }
