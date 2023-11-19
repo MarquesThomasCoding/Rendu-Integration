@@ -1,60 +1,53 @@
-// Font
+// Font, typo and text colors
 
+// Utilisation des mixins
 @use '../mixins/mixins' as *;
 
-$font-primary: 'Poppins', sans-serif;
 
-$font-weigth-light: 300;
-$font-weigth-regular: 400;
-$font-weigth-medium: 500;
-$font-weigth-semibold: 600;
-
-$font-size-small: 12px;
-$font-size-base: 18px;
-$font-size-button: 21px;
-$font-size-list-title: 24px;
-$font-size-footer-title: 27px;
-$font-size-title: 52px;
-$font-size-main-title: $font-size-base*7;
-$font-size-main-secondary-title: 54px;
-$font-size-forces-title: 64px;
-
-$line-height-base: 24px;
-$line-height-title: 66px;
-
+// Body
 body {
     font-family: $font-primary;
     font-size: $font-size-base;
     color: $color-primary-black;
 }
 
+
+// Navbar
 .navbar {
     font-weight: $font-weigth-light;
+
+    // .navbar__list__item
+    &__list__item {
+        color: $color-primary-white;
+    
+        // .navbar__list__item__btn
+        &__btn {
+            font-weight: $font-weigth-semibold;
+            font-size: 15px;
+            color: $color-primary-green;
+        }
+    }
 }
 
-.menu__item {
-    color: $color-primary-white;
-}
 
-.item__btn {
-    font-weight: $font-weigth-semibold;
-    font-size: 15px;
-    color: $color-primary-green;
-}
-
+// Header
 .header {
-    &-content {
+
+    // .header__content
+    &__content {
     font-family: $font-primary;
     color: $color-primary-white;
     }
 
-    &-title {
+    // .header__title
+    &__title {
         font-size: $font-size-main-title;
         font-weight: $font-weigth-medium;
         line-height: 189px;
     }
 
-    &-text {
+    // .header__text
+    &__text {
         font-size: $font-size-main-secondary-title;
         font-style: italic;
         
@@ -64,6 +57,8 @@ body {
     }
 }
 
+
+// Welcome et accroche paragraphes
 .welcome__p {
     font-size: $font-size-base;
     font-weight: $font-weigth-regular;
@@ -75,49 +70,39 @@ body {
     color: $color-primary-white;
 }
 
-.menu__p {
-    line-height: $line-height-base;
-}
 
-.item__name, .item__prix {
-    font-size: $font-size-list-title;
-    font-weight: $font-weigth-medium;
-    color: $color-primary-green;
-}
+// Menu
+.menu {
 
-.force__titles {
-    font-size: $font-size-forces-title;
-    font-style: italic;
-
-    @include bp(467px) {
-        font-size: $font-size-forces-title*0.7;
-    }
-}
-
-.item-sold {
-    color: $color-primary-white;
-}
-
-.preparations {
-    color: $color-primary-white;
-
-    &__list {
+    // .menu__p
+    &__p {
         line-height: $line-height-base;
     }
+
+    // .menu__item__name & .menu__item__prix
+    &__item__name, &__item__prix {
+        font-size: $font-size-list-title;
+        font-weight: $font-weigth-medium;
+        color: $color-primary-green;
+    }
+
+    // .menu__forces__titles
+    &__forces__titles {
+        font-size: $font-size-forces-title;
+        font-style: italic;
+    
+        @include bp(467px) {
+            font-size: $font-size-forces-title*0.7;
+        }
+    }
+
+    // .menu__item-sold__text
+    &__item-sold__text {
+        color: $color-primary-white;
+    }
 }
 
-
-
-.section-form {
-    color: $color-primary-black;
-}
-
-.form__label {
-    font-size: $font-size-list-title;
-    font-style: italic;
-    color: $color-primary-green;
-}
-
+// Forces colors
 .blue {
     color: $color-primary-blue;
 }
@@ -126,13 +111,41 @@ body {
     color: $color-primary-green;
 }
 
+
+// Preparations
+.preparations {
+    color: $color-primary-white;
+
+    // .preparations__list
+    &__list {
+        line-height: $line-height-base;
+    }
+}
+
+
+// Form
+.form {
+    color: $color-primary-black;
+
+    // .form__label
+    &__label {
+        font-size: $font-size-list-title;
+        font-style: italic;
+        color: $color-primary-green;
+    }
+}
+
+
+// Footer
 .footer {
     color: $color-primary-white;
 
+    // .footer__list
     &__list {
         line-height: 34px;
     }
 
+    // .footer__title
     &__title {
         font-size: $font-size-footer-title;
         font-weight: $font-weigth-semibold;

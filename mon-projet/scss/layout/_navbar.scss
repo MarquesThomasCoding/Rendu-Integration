@@ -1,5 +1,6 @@
 @use '../mixins/mixins' as *;
 
+// Navbar
 .navbar {
     position: absolute;
     z-index: 2;
@@ -18,27 +19,29 @@
     @include bp(450px) {
         justify-content: center;
     }
-}
 
-.navbar__menu {
-    @include flex(space-between, center);
-    gap: 50px;
-}
+    // .navbar__list
+    &__list {
+        @include flex(space-between, center);
+        gap: 50px;
 
-.menu__item {
-    @include bp(1020px) {
-        display: none;
-    }
-}
-
-.item__btn {
-    display: block;
-    background-color: $color-primary-white;
-    padding: 1em 30px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba($color-primary-black, 0.25);
-
-    @include bp(450px) {
-        display: none;
+        // .navbar__list__item
+        &__item {
+            @include bp(1020px) {
+                display: none;
+            }
+                // .navbar__list__item__btn
+            &__btn {
+                display: block;
+                background-color: $color-primary-white;
+                padding: 1em 30px;
+                border-radius: 10px;
+                box-shadow: 0px 8px 16px rgba($color-primary-black, 0.25);
+            
+                @include bp(450px) {
+                    display: none;
+                }
+            }
+        }
     }
 }

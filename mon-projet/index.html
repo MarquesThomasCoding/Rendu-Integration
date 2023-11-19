@@ -12,20 +12,20 @@
 <body>
     <nav class="navbar">
         <img class="navbar__img" src="imgs/Logo.png" alt="Logo">
-        <ul class="navbar__menu">
-            <li class="menu__item"><a href="#header">Accueil</a></li>
-            <li class="menu__item"><a href="#welcome">Qui sommes-nous ?</a></li>
-            <li class="menu__item"><a href="#menu">Menu</a></li>
-            <li class="menu__item"><a href="#form">Contact</a></li>
-            <li class="menu__item item__btn"><a href="#">Commander</a></li>
+        <ul class="navbar__list">
+            <li class="navbar__list__item"><a href="#header">Accueil</a></li>
+            <li class="navbar__list__item"><a href="#welcome">Qui sommes-nous ?</a></li>
+            <li class="navbar__list__item"><a href="#menu">Menu</a></li>
+            <li class="navbar__list__item"><a href="#form">Contact</a></li>
+            <li class="navbar__list__item navbar__list__item__btn"><a href="#">Commander</a></li>
         </ul>
     </nav>
 
     <section id="header" class="section header">
         <div class="overlay"></div>
-        <div class="header-content">
-            <h1 class="header-title">mongoo</h1>
-            <p class="header-text">c'est frais pour vous !</p>
+        <div class="header__content">
+            <h1 class="header__title">mongoo</h1>
+            <p class="header__text">c'est frais pour vous !</p>
         </div>
         <div class="header__social-media">
             <img src="imgs/Icon awesome-facebook-square.png" alt="Facebook" class="social-media__item">
@@ -51,7 +51,7 @@
 
     <section id="accroche" class="section accroche">
         <div class="accroche__content">
-            <h2 class="title title-white accroche__title">Préparé sur place et avec amour</h2>
+            <h2 class="title title--white accroche__title">Préparé sur place et avec amour</h2>
             <p class="accroche__p">
                 Chez MONGOO, <u>tous les ingrédients</u> et <u>tous les desserts</u> sont préparés sur place.
                 <br><br>
@@ -59,7 +59,7 @@
                 <br><br>
                 Alors faites votre choix !
             </p>
-            <a href="#" class="button button-white">En savoir +</a>
+            <a href="#" class="button button--white">En savoir +</a>
         </div>
     </section>
 
@@ -74,59 +74,59 @@
                 Découvrez notre large sélection de boissons et desserts pour accompagner votre repas
             </p>
         </div>
-        <div class="content">
+        <div class="menu__content">
             <ul class="menu__list">
                 <li class="menu__item">
-                    <div class="item__infos">
-                        <div class="item__name">Salade j'aime</div>
-                        <div class="item__prix">7,70€</div>
+                    <div class="menu__item__infos">
+                        <div class="menu__item__name">Salade j'aime</div>
+                        <div class="menu__item__prix">7,70€</div>
                     </div>
-                    <div class="item__ingredients">
+                    <div class="menu__item__ingredients">
                         1 base · 4 ingrédients verts · Sauce
                         <br>
                         Petit plus et pain offert 
                     </div>
                 </li>
                 <li class="menu__item">
-                    <div class="item__infos">
-                        <div class="item__name">Salade j'aime</div>
-                        <div class="item__prix">7,70€</div>
+                    <div class="menu__item__infos">
+                        <div class="menu__item__name">Salade j'aime</div>
+                        <div class="menu__item__prix">7,70€</div>
                     </div>
-                    <div class="item__ingredients">
+                    <div class="menu__item__ingredients">
                         1 base · 4 ingrédients verts · Sauce
                         <br>
                         Petit plus et pain offert 
                     </div>
                 </li>
                 <li class="menu__item menu__item-sold">
-                    <div class="item-sold">La plus vendue !</div>
-                    <div class="item__infos">
-                        <div class="item__name">Salade j'aime</div>
-                        <div class="item__prix">7,70€</div>
+                    <div class="menu__item-sold__text">La plus vendue !</div>
+                    <div class="menu__item__infos">
+                        <div class="menu__item__name">Salade j'aime</div>
+                        <div class="menu__item__prix">7,70€</div>
                     </div>
-                    <div class="item__ingredients">
+                    <div class="menu__item__ingredients">
                         1 base · 4 ingrédients verts · Sauce
                         <br>
                         Petit plus et pain offert 
                     </div>
                 </li>
                 <li class="menu__item">
-                    <div class="item__infos">
-                        <div class="item__name">Salade j'aime</div>
-                        <div class="item__prix">7,70€</div>
+                    <div class="menu__item__infos">
+                        <div class="menu__item__name">Salade j'aime</div>
+                        <div class="menu__item__prix">7,70€</div>
                     </div>
-                    <div class="item__ingredients">
+                    <div class="menu__item__ingredients">
                         1 base · 4 ingrédients verts · Sauce
                         <br>
                         Petit plus et pain offert 
                     </div>
                 </li>
                 <li class="menu__item">
-                    <div class="item__infos">
-                        <div class="item__name">Salade j'aime</div>
-                        <div class="item__prix">7,70€</div>
+                    <div class="menu__item__infos">
+                        <div class="menu__item__name">Salade j'aime</div>
+                        <div class="menu__item__prix">7,70€</div>
                     </div>
-                    <div class="item__ingredients">
+                    <div class="menu__item__ingredients">
                         1 base · 4 ingrédients verts · Sauce
                         <br>
                         Petit plus et pain offert 
@@ -134,11 +134,11 @@
                 </li>
             </ul>
             <div class="menu__forces">
-                <div class="forces__titles">
-                    <h1 class="forces__title green">Force verte ?</h1>
-                    <h1 class="forces__title blue">Force bleue ?</h1>    
+                <div class="menu__forces__titles">
+                    <h1 class="menu__forces__title green">Force verte ?</h1>
+                    <h1 class="menu__forces__title blue">Force bleue ?</h1>    
                 </div>
-                <p class="forces__p">
+                <p class="menu__forces__p">
                     Ne perdez pas une seconde, faites votre choix
                     et venez chercher votre salade dans 20min !
                 </p>
@@ -149,7 +149,7 @@
 
     <section id="preparations" class="section preparations">
         <div class="preparations__card preparations__card__green">
-            <h2 class="title title-white preparations__title">Chez les verts</h2>
+            <h2 class="title title--white preparations__title">Chez les verts</h2>
             <ul class="preparations__list">
                 <li class="preparations__list__item">Croûtons</li>
                 <li class="preparations__list__item">Radis</li>
@@ -171,7 +171,7 @@
             </ul>
         </div>
         <div class="preparations__card preparations__card__blue">
-            <h2 class="title title-white preparations__title">Chez les bleus</h2>
+            <h2 class="title title--white preparations__title">Chez les bleus</h2>
             <ul class="preparations__list">
                 <li class="preparations__list__item">Aubergines</li>
                 <li class="preparations__list__item">Feta</li>

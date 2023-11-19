@@ -16,303 +16,54 @@
 // Mixins
 @import 'mixins/mixins';
 
-
+// Body
 body {
     overflow-x: hidden;
 }
 
+
+
+// Sections
 .section {
     min-height: 100vh;
     max-width: 100%;
+}
 
-    &.header {
-        background-image: url('../imgs/Headerback.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        @include flex(center, center, column);
 
-        @include bp(1020px) {
-            display: none;
-        }
+// Header
+.header {
+    background-image: url('../imgs/Headerback.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex(center, center, column);
 
-        .header-content {
-            z-index: 2;
-        }
-
-        .header-text {
-            margin-left: 70px;
-            transform: rotate(-9deg);
-        }
-
-        .header__social-media {
-            @include flex();
-            gap: 20px;
-            position: absolute;
-            margin: 80px;
-            bottom: 0;
-            right: 0;
-        }
+    @include bp(1020px) {
+        display: none;
     }
 
-    &.welcome {
-        background-image: url('../imgs/61842.png');
-        @include flex(center, stretch, column);
-        position: relative;
-
-        .welcome {
-            &__text {
-                @include flex(center, stretch, column);
-                gap: 40px;
-                width: 620px;
-                margin: 148px;
-
-                @include bp(904px) {
-                    margin-inline: 20px;
-                    width: 90%;
-                }
-            }
-
-            &__p {
-                margin-right: 148px;
-
-                @include bp(904px) {
-                    margin-inline: 0;
-                }
-            }
-
-            &__img {
-                position: absolute;
-                right: -155px;
-
-                @include bp(1265px) {
-                    display: none;
-                }
-            }
-        }
+    // .header__content
+    &__content {
+        z-index: 2;
     }
 
-    &.accroche {
-        background-image: url('../imgs/ismael-trevino-NDyuR4Huig8-unsplash.png');
-        background-size: cover;
+    // .header__text
+    &__text {
+        margin-left: 70px;
+        transform: rotate(-9deg);
+    }
+
+    // .header__social-media
+    &__social-media {
         @include flex();
-        position: relative;
-
-        .accroche__content {
-            @include flex(center, center, column);
-            gap: 40px;
-            background-color: rgba($color-primary-green, 0.8);
-            margin-inline: 580px 148px;
-            margin-block: 80px;
-            padding: 48px 68px;
-            text-align: center;
-
-            @include bp(1180px) {
-                margin-inline: auto;
-            }
-
-            @include bp(904px) {
-                padding-inline: 20px;
-            }
-        }
-    }
-
-    &.menu {
-        background-image: url('../imgs/pattern.png');
-        @include flex(center, space-between, column);
-        margin-block: 65px;
-        gap: 80px;
-
-        .menu__text {
-            text-align: center;
-            @include flex(center, center, column);
-            gap: 30px;
-        }
-
-        .content {
-            @include grid();
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-
-            @include bp(1020px) {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .menu__list {
-            list-style: none;
-            @include flex(center, stretch, column);
-            margin-left: 148px;
-            gap: 38px;
-
-            @include bp(1020px) {
-                margin: auto;
-            }
-
-            .menu__item {
-                @include flex(center, space-between, column);
-                gap: 12px;
-                padding: 12px;
-            }
-
-            .item__infos {
-                @include flex(space-between, center);
-            }
-        }
-
-        .menu__forces {
-            @include flex(center, center, column);
-            gap: 90px;
-            margin-right: 198px;
-
-            @include bp(1310px) {
-                margin: 20px;
-            }
-
-            .forces__titles {
-                transform: rotate(-9deg);
-            }
-        }
-
-        .menu__item-sold {
-            position: relative;
-            border: 1px solid $color-primary-green;
-
-            .item-sold {
-                font-size: $font-size-small;
-                padding: 5px;
-                position: absolute;
-                top: -22px;
-                right: -1px;
-                background-color: $color-primary-green;
-            }
-        }
-    }
-
-    &.preparations {
-        background-image: url('../imgs/louis-hansel-MlPD-AzZYMg-unsplash.png');
-        background-size: cover;
-        @include grid(center, stretch);
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-
-        @include bp(900px) {
-            grid-template-columns: 1fr;
-            margin: auto;
-        }
-
-        .preparations__card {
-            @include flex(flex-start, center, column);
-            padding-block: 24px;
-            margin-block: 150px;
-
-            $colors: (green $color-primary-green, blue $color-primary-blue);
-
-            @each $color, $value in $colors {
-                &__#{$color} {
-                    background-color: rgba($value, 0.8);
-                    @if($color == 'green') {
-                        margin-left: 40px;
-                    } @else {
-                        margin-right: 40px;
-                    }
-
-                    @include bp(900px) {
-                        margin: 0px;
-                    }
-                }
-            }
-        }
-
-        .preparations__list {
-            width: 100%;
-            @include grid();
-            grid-template-columns: repeat(2, 1fr);
-            text-align: center;
-            margin-top: 40px;
-        }
-    }
-
-    &.form {
-        background-image: url('../imgs/61842.png');
-        @include grid(center, center);
-        grid-template-columns: repeat(2, 1fr);
-
-        @include bp(1226px) {
-            grid-template-columns: 1fr;
-        }
-
-        .form__cut-img {
-            background-size: cover;
-            aspect-ratio: 1/1;
-            position: relative;
-            margin-inline: 40px 64px;
-            background-image: url('../imgs/anh-nguyen-_Uqj5BQb-mw-unsplash.png');
-
-            @include bp(1226px) {
-                display: none;
-            }
-        }
-
-        .form__cut-img__line {
-            background-color: $color-primary-white;
-            position: absolute;
-            top:0;
-            left: calc(50% - 8px);
-            width: 8px;
-            height: 100%;
-
-            &:nth-child(2) {
-                top: calc(50% - 8px);
-                left: 0;
-                width: 100%;
-                height: 8px;
-            }
-        }
-
-        .form__section {
-            @include flex(space-between, center, column);
-            margin-block: 84px 106px;
-            margin-right: 106px;
-            gap: 20px;
-
-            @include bp(1226px) {
-                margin: 20px;
-            }
-        }
-
-        .form__form {
-            @include flex(space-between, flex-start);
-            gap: 25px;
-            flex-wrap: wrap;
-            width: 100%;
-        }
-
-        .form__case {
-            @include flex(center, flex-start, column);
-            gap: 8px;
-            width: 48%;
-
-            &:nth-child(n+3) {
-                width: 100%;
-            }
-        }
-
-        .form__input {
-            height: 40px;
-            border: 1px solid rgba($color-primary-black, 0.2);
-            padding: 0 10px;
-            width: 100%;
-        
-        }
-
-        .form__textarea {
-            @extend .form__input;
-            height: 100px;
-            resize: none;
-        }
+        gap: 20px;
+        position: absolute;
+        margin: 80px;
+        bottom: 0;
+        right: 0;
     }
 }
 
+// Overlay
 .overlay {
     position:absolute;
     top: 0;
@@ -322,4 +73,296 @@ body {
     width: 100%;
     background: linear-gradient(to right, #60A0D8, #B2D234);
     opacity: 0.5;
+}
+
+
+// Welcome
+.welcome {
+    background-image: url('../imgs/61842.png');
+    @include flex(center, stretch, column);
+    position: relative;
+
+    // .welcome__text
+    &__text {
+        @include flex(center, stretch, column);
+        gap: 40px;
+        width: 620px;
+        margin: 148px;
+
+        @include bp(904px) {
+            margin-inline: 20px;
+            width: 90%;
+        }
+    }
+
+    // .welcome__p
+    &__p {
+        margin-right: 148px;
+
+        @include bp(904px) {
+            margin-inline: 0;
+        }
+    }
+
+    // .welcome__img
+    &__img {
+        position: absolute;
+        top: 0;
+        right: -155px;
+
+        @include bp(1265px) {
+            display: none;
+        }
+    }
+}
+
+
+// Accroche
+.accroche {
+    background-image: url('../imgs/ismael-trevino-NDyuR4Huig8-unsplash.png');
+    background-size: cover;
+    @include flex();
+    position: relative;
+
+    // .accroche__content
+    &__content {
+        @include flex(center, center, column);
+        gap: 40px;
+        background-color: rgba($color-primary-green, 0.8);
+        margin-inline: 580px 148px;
+        margin-block: 80px;
+        padding: 48px 68px;
+        text-align: center;
+
+        @include bp(1180px) {
+            margin-inline: auto;
+        }
+
+        @include bp(904px) {
+            padding-inline: 20px;
+        }
+    }
+}
+
+
+// Menu
+.menu {
+    background-image: url('../imgs/pattern.png');
+    @include flex(center, space-between, column);
+    margin-block: 65px;
+    gap: 80px;
+
+    // .menu__text
+    &__text {
+        text-align: center;
+        @include flex(center, center, column);
+        gap: 30px;
+    }
+
+    // .menu__content
+    &__content {
+        @include grid();
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+
+        @include bp(1020px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .menu__list
+    &__list {
+        list-style: none;
+        @include flex(center, stretch, column);
+        margin-left: 148px;
+        gap: 38px;
+
+        @include bp(1020px) {
+            margin: auto;
+        }
+    }
+
+    // .menu__item
+    &__item {
+        @include flex(center, stretch, column);
+        gap: 12px;
+        padding: 12px;
+
+        // .menu__item__infos
+        &__infos {
+            @include flex(space-between, center);
+        }
+    }
+
+    // .menu__forces
+    &__forces {
+        @include flex(center, center, column);
+        gap: 90px;
+        margin-right: 198px;
+
+        @include bp(1310px) {
+            margin: 20px;
+        }
+
+        // .menu__forces__titles
+        &__titles {
+            transform: rotate(-9deg);
+        }
+    }
+
+    // .menu__item-sold
+    &__item-sold {
+        position: relative;
+        border: 1px solid $color-primary-green;
+
+        // .menu__item-sold__text
+        &__text {
+            font-size: $font-size-small;
+            padding: 5px;
+            position: absolute;
+            top: -22px;
+            right: -1px;
+            background-color: $color-primary-green;
+        }
+    }
+}
+
+
+// Preparations
+.preparations {
+    background-image: url('../imgs/louis-hansel-MlPD-AzZYMg-unsplash.png');
+    background-size: cover;
+    @include grid(center, stretch);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+    @include bp(900px) {
+        grid-template-columns: 1fr;
+        margin: auto;
+    }
+
+    // .preparations__card
+    &__card {
+        @include flex(flex-start, center, column);
+        padding-block: 24px;
+        margin-block: 150px;
+
+        $colors: (green $color-primary-green, blue $color-primary-blue);
+
+        @each $color, $value in $colors {
+            // .preparations__card__#{$color}
+            &__#{$color} {
+                background-color: rgba($value, 0.8);
+                @if($color == green) {
+                    margin-left: 40px;
+                } @else {
+                    margin-right: 40px;
+                }
+
+                @include bp(900px) {
+                    margin: 0px;
+                }
+            }
+        }
+    }
+
+    // .preparations__list
+    &__list {
+        width: 100%;
+        @include grid();
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+
+// Form
+.form {
+    background-image: url('../imgs/61842.png');
+    @include grid(center, center);
+    grid-template-columns: repeat(2, 1fr);
+
+    @include bp(1226px) {
+        grid-template-columns: 1fr;
+    }
+
+    // .form__cut-img
+    &__cut-img {
+        background-size: cover;
+        aspect-ratio: 1/1;
+        position: relative;
+        margin-inline: 40px 64px;
+        background-image: url('../imgs/anh-nguyen-_Uqj5BQb-mw-unsplash.png');
+
+        @include bp(1226px) {
+            display: none;
+        }
+    }
+
+    // .form__cut-img__line
+    &__cut-img__line {
+        background-color: $color-primary-white;
+        position: absolute;
+        top:0;
+        left: calc(50% - 8px);
+        width: 8px;
+        height: 100%;
+
+        // .form__cut-img__line:nth-child(2)
+        &:nth-child(2) {
+            top: calc(50% - 8px);
+            left: 0;
+            width: 100%;
+            height: 8px;
+        }
+    }
+
+    // .form__section
+    &__section {
+        @include flex(space-between, center, column);
+        margin-block: 84px 106px;
+        margin-right: 106px;
+        gap: 20px;
+
+        @include bp(1226px) {
+            margin: 20px;
+        }
+    }
+
+    // .form__form
+    &__form {
+        @include flex(space-between, flex-start);
+        gap: 25px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    // .form__case
+    &__case {
+        @include flex(center, flex-start, column);
+        gap: 8px;
+        width: 48%;
+
+        // .form__case:nth-child(n+3)
+        &:nth-child(n+3) {
+            width: 100%;
+        }
+    }
+
+    // .form__input
+    &__input {
+        height: 40px;
+        border: 1px solid rgba($color-primary-black, 0.2);
+        padding: 0 10px;
+        width: 100%;
+    
+    }
+
+    // .form__textarea
+    &__textarea {
+        @extend .form__input;
+        height: 100px;
+        resize: none;
+    }
 }

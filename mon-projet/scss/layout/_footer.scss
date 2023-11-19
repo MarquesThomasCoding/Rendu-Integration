@@ -1,5 +1,6 @@
 @use '../mixins/mixins' as *;
 
+// Footer
 .footer {
     @include grid(center, center);
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -7,15 +8,18 @@
     padding: 67px;
     gap: 40px;
 
-    img {
+    // footer > img
+    > img {
         width: 100%;
     }
 
+    // .footer__list
     &__list {
         @include flex(center, center, column);
         gap: 10px;
     }
 
+    // .footer__title
     &__title {
         margin-bottom: 20px;
     }

@@ -1,5 +1,6 @@
 // This file is used to style buttons throughout the project
 
+// Boutons
 .button {
   background-color: $color-primary-green;
   border-radius: 10px;
@@ -10,7 +11,8 @@
   color: $color-primary-white;
   box-shadow: 0px 8px 16px rgba($color-primary-black, 0.25);
 
-  &-white {
+  // .button--white
+  &--white {
     background-color: $color-primary-white;
     color: $color-primary-green;
   }
