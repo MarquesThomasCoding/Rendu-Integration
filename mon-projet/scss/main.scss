@@ -208,6 +208,15 @@ body {
         &__titles {
             transform: rotate(-9deg);
         }
+
+        &__p {
+            width: 460px;
+            text-align: center;
+
+            @include bp(1020px) {
+                width: 100%;
+            }
+        }
     }
 
     // .menu__item-sold

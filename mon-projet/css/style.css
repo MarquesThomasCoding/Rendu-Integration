@@ -482,6 +482,15 @@ body {
 .menu__forces__titles {
   transform: rotate(-9deg);
 }
+.menu__forces__p {
+  width: 460px;
+  text-align: center;
+}
+@media (max-width: 1020px) {
+  .menu__forces__p {
+    width: 100%;
+  }
+}
 .menu__item-sold {
   position: relative;
   border: 1px solid #B2D234;
