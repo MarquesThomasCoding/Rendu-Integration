@@ -13,4 +13,4 @@ Intégration d'une maquette d'une refonte du site de Mongoo
 ✔️ Terminé
 
 ### Lien :
-[Mongoo](https://MarquesThomasCoding.github.io/integration-mongoo/mon-projet)
+[Mongoo](https://MarquesThomasCoding.github.io/Rendu-Integration/mon-projet)
